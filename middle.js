@@ -22,18 +22,21 @@ const assertArrayEqual = function(actual, expected) {
   }
 };
 
-const without = function(array, undesi){
+const middle = function(array) {
 
-  let newArray = [];
+  let result = [];
+  const middleNumber = Math.round(array.length / 2);
 
-  for( let elements of array){
-    if (!undesi.includes(elements)){ 
-      newArray.push(elements)
-    }
+  if (array.length <= 2) {
+    return result;
+  } else if (array.length % 2 === 0) {
+    result.push(array[middleNumber - 1], array[middleNumber]);
+  } else {
+    result.push(array[middleNumber - 1]);
   }
-  return newArray
-}
+  return result;
+};
 
-//const words = ["hello", "world", "lighthouse"];
-//console.log(without(words, ["lighthouse"])); 
-//assertArrayEqual(words, ["hello", "world", "lighthouse"]);
+//assertArrayEqual(middle([1, 2, 3, 4, 5, 6]), [3, 4]); // => [3, 4]
+//assertArrayEqual(middle([1, 2, 3, 4, 5]), [3]);
+//assertArrayEqual(middle([1, 2]), []);
