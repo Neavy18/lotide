@@ -1,4 +1,7 @@
-const eqArrays = function(array1, array2) {
+const eqArrays = require('./eqArrays')
+const assertArrayEqual = require('./assertArraysEqual')
+
+/*const eqArrays = function(array1, array2) {
   if (array1.length !== array2.length) {
     return false;
   }
@@ -20,7 +23,7 @@ const assertArrayEqual = function(actual, expected) {
   } else {
     console.log(`🛑🛑🛑 Assertion Failed: ${actual} !== ${expected}`);
   }
-};
+}; */
 
 
 const takeUntil = function(array, callback) {
@@ -42,6 +45,9 @@ const takeUntil = function(array, callback) {
 
   
 };
+
+
+module.exports = takeUntil;
 
 
 

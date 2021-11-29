@@ -1,4 +1,8 @@
-const eqArrays = function(array1, array2) {
+const eqArrays = require('./eqArrays')
+const assertArrayEqual = require('./assertArraysEqual')
+
+
+/*const eqArrays = function(array1, array2) {
   if (array1.length !== array2.length) {
     return false;
   }
@@ -20,7 +24,7 @@ const assertArrayEqual = function(actual, expected) {
   } else {
     console.log(`🛑🛑🛑 Assertion Failed: ${actual} !== ${expected}`);
   }
-};
+}; */
 
 
 const words = ["ground", "control", "to", "major", "tom"];
@@ -47,3 +51,5 @@ const results3 = map(words2, word => word[3] === "l");
 assertArrayEqual(results1, [ 'g', 'c', 't', 'm', 't' ]);
 assertArrayEqual(results2, [true, false, true, false]);
 assertArrayEqual(results3, [false, true, true, false]);
+
+module.exports = map;

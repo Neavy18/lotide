@@ -1,4 +1,8 @@
-const eqArrays = function(array1, array2) {
+const eqArrays = require('./eqArrays')
+const assertArrayEqual = require('./assertArraysEqual')
+
+
+/*const eqArrays = function(array1, array2) {
   if (array1.length !== array2.length) {
     return false;
   }
@@ -20,7 +24,7 @@ const assertArrayEqual = function(actual, expected) {
   } else {
     console.log(`🛑🛑🛑 Assertion Failed: ${actual} !== ${expected}`);
   }
-};
+};*/
 
 const without = function(array, undesi){
 
@@ -34,6 +38,8 @@ const without = function(array, undesi){
   return newArray
 }
 
-//const words = ["hello", "world", "lighthouse"];
-//console.log(without(words, ["lighthouse"])); 
-//assertArrayEqual(words, ["hello", "world", "lighthouse"]);
+const words = ["hello", "world", "lighthouse"];
+console.log(without(words, ["lighthouse"])); 
+assertArrayEqual(words, ["hello", "world", "lighthouse"]);
+
+module.exports = without;
